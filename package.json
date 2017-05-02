@@ -1,10 +1,11 @@
 {
-  "name": "flowgen",
+  "name": "flowgen-test",
   "version": "1.2.0",
   "description": "Generate flowtype definition files from TypeScript",
   "main": "lib/index.js",
   "scripts": {
     "compile": "babel --out-dir lib ./src",
+    "compile-debug": "babel --source-maps --out-dir lib ./src",
     "compile:watch": "npm run compile -- -w",
     "test": "jest"
   },

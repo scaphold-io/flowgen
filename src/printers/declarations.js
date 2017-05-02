@@ -86,3 +86,21 @@ export const classDeclaration = (node: RawNode) => {
 
   return str;
 }
+
+export const exportDeclaration = (node: RawNode) => {
+
+  let str = 'export ';
+  if (node.exportClause) {
+    str += '{ ' +
+      node.exportClause.elements.map(elem => elem.name.text).join(', ') +
+      ' }'
+  } else {
+    str += '*'
+  }
+  str += ' from '
+  if (node.moduleSpecifier) {
+    str += '\'' + node.moduleSpecifier.text + '\''
+  }
+  str += ';'
+  return str
+}

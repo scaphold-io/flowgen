@@ -103,6 +103,9 @@ const collectNode = (node: RawNode, context: Node, factory: Factory) => {
     case ts.SyntaxKind.ImportDeclaration:
       context.addChild(parseNameFromNode(node), factory.createImportNode(node)); break;
 
+    case ts.SyntaxKind.ExportDeclaration:
+      context.addChild(parseNameFromNode(node), factory.createExportDeclarationNode(node)); break;
+
     case ts.SyntaxKind.ImportEqualsDeclaration:
       break;
     case ts.SyntaxKind.EnumDeclaration:
