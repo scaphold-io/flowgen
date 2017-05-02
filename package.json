@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "bin": {
-    "flowgen": "./lib/cli/index.js"
+    "flowgen-test": "./lib/cli/index.js"
   },
   "files": [
     "lib"
