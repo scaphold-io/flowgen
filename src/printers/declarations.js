@@ -65,10 +65,10 @@ export const typeDeclaration = (nodeName: string, node: RawNode) => {
 
 export const typeReference = (node: RawNode) => {
   if (node.typeName.left && node.typeName.right) {
-    return printers.node.printType(node.typeName) + printers.common.generics(node.typeArguments);
+    return `\n${printers.node.printType(node.typeName) + printers.common.generics(node.typeArguments)}\n\n`
   }
 
-  return printers.relationships.namespaceProp(node.typeName.text, true) + printers.common.generics(node.typeArguments)
+  return `\n${printers.relationships.namespaceProp(node.typeName.text, true) + printers.common.generics(node.typeArguments)}\n\n`
 }
 
 export const classDeclaration = (node: RawNode) => {
