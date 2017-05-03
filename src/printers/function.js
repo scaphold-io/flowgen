@@ -22,7 +22,7 @@ export const functionType = (func: RawNode, dotAsReturn: boolean = false) => {
 }
 
 export const functionDeclaration = (nodeName: string, node: RawNode) => {
-  let str = `declare ${printers.relationships.exporter(node)}function ${nodeName}${functionType(node, true)}`;
+  let str = `declare ${printers.relationships.exporter(node)}function ${nodeName}${functionType(node, true)};`;
 
   return str;
 }

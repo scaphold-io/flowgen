@@ -7,7 +7,8 @@
     "compile": "babel --out-dir lib ./src",
     "compile-debug": "babel --source-maps --out-dir lib ./src",
     "compile:watch": "npm run compile -- -w",
-    "test": "jest"
+    "test": "jest",
+    "patch-release": "npm version patch && npm publish"
   },
   "bin": {
     "flowgen-test": "./lib/cli/index.js"
