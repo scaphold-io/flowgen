@@ -1,6 +1,6 @@
 {
   "name": "flowgen-test",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Generate flowtype definition files from TypeScript",
   "main": "lib/index.js",
   "scripts": {
