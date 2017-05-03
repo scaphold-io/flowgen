@@ -52,13 +52,13 @@ export const interfaceDeclaration = (nodeName: string, node: RawNode) => {
 
   const type = node.heritageClauses ? 'type' : 'interface'
 
-  let str = `${printers.relationships.exporter(node)}${type} ${nodeName}${printers.common.generics(node.typeParameters)} ${type === 'type' ? '= ' : ''}${interfaceType(node)} ${heritage}`;
+  let str = `declare ${printers.relationships.exporter(node)}${type} ${nodeName}${printers.common.generics(node.typeParameters)} ${type === 'type' ? '= ' : ''}${interfaceType(node)} ${heritage}`;
 
   return str;
 }
 
 export const typeDeclaration = (nodeName: string, node: RawNode) => {
-  let str = `${printers.relationships.exporter(node)}type ${nodeName}${printers.common.generics(node.typeParameters)} = ${printers.node.printType(node.type)};`;
+  let str = `declare ${printers.relationships.exporter(node)}type ${nodeName}${printers.common.generics(node.typeParameters)} = ${printers.node.printType(node.type)};`;
 
   return str;
 }
