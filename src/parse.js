@@ -64,6 +64,7 @@ export const stripDetailsFromTree = (root: RawNode) => {
 }
 
 const collectNode = (node: RawNode, context: Node, factory: Factory) => {
+  debugger
   switch (node.kind) {
     case ts.SyntaxKind.ModuleDeclaration:
       if (node.flags === 4098 || node.flags === 16 /* TODO: Replace with namespace flag enum */) {
@@ -140,6 +141,6 @@ export function getMembersFromNode(node: any) {
   if (node.members) {
     return node.members;
   }
-  
+
   console.log('NO MEMBERS_', node)
 }

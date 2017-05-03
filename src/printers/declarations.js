@@ -104,3 +104,29 @@ export const exportDeclaration = (node: RawNode) => {
   str += ';'
   return str
 }
+
+export const importDeclaration = (node: RawNode) => {
+  debugger
+  let str = 'import ';
+  const ic = node.importClause
+  if (ic) {
+    const nb = ic.namedBindings
+    if (ic.namedBindings) {
+      if (nb.kind === 'NamedImports') {
+        str += '{ ' + nb.elements.map(e => e.name.text).join(', ') + ' }'
+      } else if (nb.kind === 'NamespaceImport') {
+        str += '* as ' + ic.namedBindings.name.text
+      }
+    } else {
+      str += ic.name.text
+    }
+  } else {
+    str += '*'
+  }
+  str += ' from '
+  if (node.moduleSpecifier) {
+    str += '\'' + node.moduleSpecifier.text + '\''
+  }
+  str += ';'
+  return str
+}
