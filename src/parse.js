@@ -102,10 +102,10 @@ const collectNode = (node: RawNode, context: Node, factory: Factory) => {
       context.addChild(parseNameFromNode(node), factory.createExportNode(node)); break;
 
     case ts.SyntaxKind.ImportDeclaration:
-      context.addChild(parseNameFromNode(node), factory.createImportNode(node)); break;
+      // context.addChild(parseNameFromNode(node), factory.createImportNode(node)); break;
 
     case ts.SyntaxKind.ExportDeclaration:
-      context.addChild(parseNameFromNode(node), factory.createExportDeclarationNode(node)); break;
+      // context.addChild(parseNameFromNode(node), factory.createExportDeclarationNode(node)); break;
 
     case ts.SyntaxKind.ImportEqualsDeclaration:
       break;
