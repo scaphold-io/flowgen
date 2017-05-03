@@ -56,7 +56,7 @@ export default (options: RunnerOptions) => {
           const flowDefinitions = compiler.compileDefinitionFile(file);
 
           // Write the output to disk
-          const absoluteOutputFilePath: string = writeFile(outputFile, beautify(intro + flowDefinitions));
+          const absoluteOutputFilePath: string = writeFile(outputFile, flowDefinitions);
 
           // Check if we should compile tests as well
           if (options.compileTests) {
